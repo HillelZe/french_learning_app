@@ -1,0 +1,213 @@
+* {
+  padding: 0;
+  margin: 4px;
+  box-sizing: content-box;
+  font-size: 16px;
+}
+
+body {
+  font-family: open sans;
+  @media (min-width: 768px) {
+    margin: 48px 96px;
+  }
+
+  position: relative;
+
+  color: #444;
+}
+input {
+  border-radius: 12px;
+  background-color: #ffffff;
+  width: 200px;
+  height: 20px;
+  padding: 6px 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+button {
+  border-radius: 12px;
+  color: inherit;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px 12px;
+  font-weight: bold;
+  background-color: #364fc7;
+  color: #fff;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 768px) {
+    align-self: end;
+    grid-row-start: 4;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+}
+.speaker-botton {
+  justify-self: left;
+  grid-row-start: 4;
+  grid-column-start: 4;
+  width: 20px;
+  height: 20px;
+
+  @media (max-width: 768px) {
+    grid-row-start: 4;
+    grid-column-start: 4;
+  }
+}
+.toggle {
+  position: absolute;
+  right: 0;
+  background: none;
+  font-size: 30px;
+  padding: 4px;
+}
+.synonyms {
+  /*מיותר?*/
+  justify-self: center;
+  grid-row-start: 3;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+.num-of-questions {
+  justify-self: center;
+  grid-column-start: 3;
+  @media (max-width: 768px) {
+    justify-self: center;
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+}
+.message {
+  /*מיותר?*/
+  justify-self: center;
+  grid-row-start: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  @media (max-width: 768px) {
+    justify-self: center;
+    grid-row-start: 4;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    align-self: end;
+  }
+}
+.tab {
+  border-radius: 12px;
+  background-color: #edf2ff;
+  padding: 12px 24px;
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #364fc7;
+  transition: all 0.3s;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: #364fc7;
+  color: #fff;
+}
+
+.tab-content {
+  display: grid;
+  grid-template-rows: 50px 60px 60px 70px 80px;
+  grid-template-columns: 5% 15% 40% 40%;
+  width: 55%;
+  background-color: #edf2ff;
+  padding: 32px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  @media (max-width: 768px) {
+    width: 90%; /* Full width for mobile devices */
+    grid-template-rows: 50px 60px 60px 120px 80px;
+  }
+}
+
+.tab-content h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #364fc7;
+}
+
+.tab-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.tab-actions > button {
+  background: none;
+  text-decoration: underline;
+  color: #4c6ef5;
+  font-size: 14px;
+}
+
+.keys {
+  font-size: 12px;
+  padding: 6px 12px;
+}
+.tab-undo {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-undo button {
+  background-color: #364fc7;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+}
+.grammar-container {
+  width: 300px;
+  height: 200px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.grammar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+/* Grammer component */
+textarea {
+  width: 500px;
+  resize: none;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.textarea-sentence {
+  height: 50px;
+}
+
+.textarea-answer {
+  height: 50px;
+}
+
+.textarea-feedback {
+  height: 200px;
+  font-weight: bold;
+}
