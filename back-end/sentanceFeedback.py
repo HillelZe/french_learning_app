@@ -1,11 +1,13 @@
 import http.client
 import json
+import boto3
 
 
 def lambda_handler(event, context):
     print("DEBUG - Event received:", json.dumps(event))
     sentence = str(event.get("sentence"))
     answer = str(event.get("answer"))
+
     api_key = get_api_key()
     headers = {
         'Content-Type': 'application/json',
@@ -46,7 +48,9 @@ def lambda_handler(event, context):
         },
         "body": feedback
     }
-    def get_api_key():
+
+
+def get_api_key():
     ssm = boto3.client('ssm')
     parameter = ssm.get_parameter(
         Name='/api-keys/openai',
