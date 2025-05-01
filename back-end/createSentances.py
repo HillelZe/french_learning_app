@@ -63,22 +63,7 @@ def lambda_handler(event, context):
 
     print(level)
     print(", ".join(topics))
-    # Replace with your actual API key
-    headers = {
-        'Content-Type': 'application/json',
-        'Authorization': f'Bearer {api_key}'
-    }
-    prompt = (
-        f"Create {num_of_questions} sentence(s) in French in level {level} according to the following instructions: \n"
-        f"{instructions}\n"
-        f"translate and return all the sentances in english"
-        f"start each sentance on a new line\n"
-        f"never put a french word in the sentance you create\n"
-        f"make sure that the most plausible translatoin of the sentance to french includes the chosen french word.\n"
-        f"Make sure the sentences are appropriate (but not too easy) for a student at the {level} level in french.\n"
-        f"Focus on clear, well-structured sentences that highlight the specified topics and vocabulary."
-        f"dont add numbering. write only the sentances."
-    )
+
     api_key = get_api_key()
     headers = {
         'Content-Type': 'application/json',
