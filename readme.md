@@ -44,3 +44,7 @@ This app helps you build and retain French vocabulary efficiently using personal
 - **AWS Cognito** for user authentication
 - **Google Translate API** for translation features
 - **OpenAI GPT-4 API** for grammar feedback and sentence generation
+
+## 📝 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
